@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <site>
-   <feature url="features/ca.jahed.papyrusrt.mqtt.codegen-feature_1.0.0.jar" id="ca.jahed.papyrusrt.mqtt.codegen-feature" version="1.0.0" patch="true">
+   <feature url="features/ca.jahed.papyrusrt.mqtt.codegen-feature_1.0.0.201810090159.jar" id="ca.jahed.papyrusrt.mqtt.codegen-feature" version="1.0.0.201810090159" patch="true">
       <category name="mqtt"/>
    </feature>
-   <feature url="features/ca.jahed.papyrusrt.mqtt.rts-feature_1.0.0.jar" id="ca.jahed.papyrusrt.mqtt.rts-feature" version="1.0.0" patch="true">
+   <feature url="features/ca.jahed.papyrusrt.mqtt.rts-feature_1.0.0.201810090159.jar" id="ca.jahed.papyrusrt.mqtt.rts-feature" version="1.0.0.201810090159" patch="true">
       <category name="mqtt"/>
    </feature>
-   <feature url="features/ca.jahed.papyrusrt.mqtt.umlrt.common-feature_1.0.0.jar" id="ca.jahed.papyrusrt.mqtt.umlrt.common-feature" version="1.0.0" patch="true">
+   <feature url="features/ca.jahed.papyrusrt.mqtt.umlrt.common-feature_1.0.0.201810090159.jar" id="ca.jahed.papyrusrt.mqtt.umlrt.common-feature" version="1.0.0.201810090159" patch="true">
       <category name="mqtt"/>
    </feature>
    <category-def name="mqtt" label="MQTT"/>
