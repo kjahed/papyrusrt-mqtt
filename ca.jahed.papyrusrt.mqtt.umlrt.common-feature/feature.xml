@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="ca.jahed.papyrusrt.mqtt.umlrt.common-feature"
+      label="UMLRT Common Feature Patch"
+      version="1.0.0"
+      provider-name="Queen&apos;s University">
+
+   <requires>
+      <import feature="org.eclipse.papyrusrt.umlrt.common.feature" version="1.0.0.201707181445" patch="true"/>
+   </requires>
+
+   <plugin
+         id="org.eclipse.papyrusrt.umlrt.common.rts.library"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"/>
+
+</feature>

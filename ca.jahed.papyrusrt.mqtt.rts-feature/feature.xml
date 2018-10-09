@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="ca.jahed.papyrusrt.mqtt.rts-feature"
+      label="RTS Feature Patch"
+      version="1.0.0"
+      provider-name="Queen&apos;s University">
+
+   <requires>
+      <import feature="org.eclipse.papyrusrt.rts-feature" version="1.0.0.201707181457" patch="true"/>
+   </requires>
+
+   <plugin
+         id="org.eclipse.papyrusrt.rts"
+         download-size="0"
+         install-size="0"
+         version="1.0.0.qualifier"/>
+
+</feature>
