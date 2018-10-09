@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <feature
       id="ca.jahed.papyrusrt.mqtt.rts-feature"
-      label="RTS Feature Patch"
-      version="1.0.0"
+      label="RTS Support"
+      version="1.0.0.qualifier"
       provider-name="Queen&apos;s University">
 
    <requires>

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <feature
       id="ca.jahed.papyrusrt.mqtt.umlrt.common-feature"
-      label="UMLRT Common Feature Patch"
-      version="1.0.0"
+      label="UMLRT Common Support"
+      version="1.0.0.qualifier"
       provider-name="Queen&apos;s University">
 
    <requires>
