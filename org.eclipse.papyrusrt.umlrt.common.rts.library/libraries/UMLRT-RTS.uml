@@ -86,7 +86,11 @@ NOTE: This is an abstract protocol that is only meant to be inherited. Ports MUS
             <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
           </ownedParameter>
         </ownedOperation>
-        <ownedOperation xmi:type="uml:Operation" xmi:id="_s9bf0MT3Eei7WtNtKyCSvw" name="connected"/>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_s9bf0MT3Eei7WtNtKyCSvw" name="connected">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_ELe24EqnEemNQfpivZ7Ajg" name="sockfd">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+          </ownedParameter>
+        </ownedOperation>
         <ownedOperation xmi:type="uml:Operation" xmi:id="_u3JagMT3Eei7WtNtKyCSvw" name="disconnected"/>
         <ownedOperation xmi:type="uml:Operation" xmi:id="_xs0AEMT3Eei7WtNtKyCSvw" name="error">
           <ownedParameter xmi:type="uml:Parameter" xmi:id="_ydwU0MT3Eei7WtNtKyCSvw" name="errno">

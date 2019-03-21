@@ -27,21 +27,41 @@ public:
 		int length;
     };
 
+    class AcceptRequest : public UMLRTQueueElement {
+	public:
+		const UMLRTCommsPort * port;
+		int socket;
+    };
+
+    class PortElement : public UMLRTQueueElement {
+	public:
+		const UMLRTCommsPort * port;
+    };
+
     void spawn ( );
 
-    static void connekt ( const UMLRTCommsPort * port, const char * host, int tcpPort );
-    static void disconnect ( const UMLRTCommsPort * port );
-    static void send ( const UMLRTCommsPort * port, char * payload, int length );
-    static void send ( const UMLRTCommsPort * port, const char * msg );
-    static void queueMessage ( UMLRTTCPService::Message * msg );
+    static bool connekt ( const UMLRTCommsPort * port, const char * host, int tcpPort );
+    static bool listn ( const UMLRTCommsPort * port, int tcpPort );
+    static bool akcept ( const UMLRTCommsPort * port );
+    static bool attach ( const UMLRTCommsPort * port, int sockfd );
+    static bool disconnect ( const UMLRTCommsPort * port );
+    static bool send ( const UMLRTCommsPort * port, char * payload, int length );
+    static bool send ( const UMLRTCommsPort * port, const char * msg );
 private:
     virtual void * run ( void * args );
 
     static UMLRTQueue outQueue;
+    static UMLRTQueue acceptRequests;
     static UMLRTHashMap * portSocketMap;
+    static UMLRTHashMap * portIdMap;
+
+    static void queueMessage ( UMLRTTCPService::Message * msg );
 
     static int getSocket ( const UMLRTCommsPort * port );
+    static void putSocket ( const UMLRTCommsPort * port, int socket );
+    static void removeSocket ( const UMLRTCommsPort * port );
     static UMLRTHashMap * getPortSocketMap ( );
+    static UMLRTHashMap * getPortIdMap ( );
 };
 
 #endif // UMLRTTCPSERVICE_HH

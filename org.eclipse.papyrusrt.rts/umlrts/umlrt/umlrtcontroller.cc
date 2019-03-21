@@ -187,7 +187,11 @@ bool UMLRTController::deliver ( const UMLRTCommsPort * destPort, const UMLRTSign
     else
     {
         // Look up sapIndex0 so receiver knows which index in their replicated port the message was received on.
-        msg->sapIndex0_ = signal.getSrcPort()->farEnds[srcPortIndex].farEndIndex;
+    		if(signal.getSrcPort() != destPort)
+    			msg->sapIndex0_ = signal.getSrcPort()->farEnds[srcPortIndex].farEndIndex;
+    		else
+    			msg->sapIndex0_ = signal.getSrcPort()->roleIndex;
+
         msg->signal = signal;
         msg->destPort = destPort;
         msg->destSlot = destPort->slot;

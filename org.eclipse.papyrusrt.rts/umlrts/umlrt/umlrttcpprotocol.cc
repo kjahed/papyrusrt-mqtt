@@ -2,6 +2,24 @@
 
 #include "umlrttcpprotocol.hh"
 
+UMLRTObject_field UMLRTTCPProtocol::fields_connected[] =
+{
+    {
+        "sockfd",
+        &UMLRTType_int,
+        offsetof( params_connected, sockfd ),
+        1,
+        0
+    }
+};
+
+UMLRTObject UMLRTTCPProtocol::payload_connected =
+{
+    sizeof( params_connected ),
+    1,
+	fields_connected
+};
+
 UMLRTObject_field UMLRTTCPProtocol::fields_received[] =
 {
     {
@@ -43,31 +61,6 @@ UMLRTObject UMLRTTCPProtocol::payload_error =
     sizeof( params_error ),
     1,
 	fields_error
-};
-
-UMLRTObject_field UMLRTTCPProtocol::fields_connected[] =
-{
-    #ifdef NEED_NON_FLEXIBLE_ARRAY
-    {
-        0,
-        0,
-        0,
-        0,
-        0
-    }
-    #endif
-};
-
-UMLRTObject UMLRTTCPProtocol::payload_connected =
-{
-    0,
-    #ifdef NEED_NON_FLEXIBLE_ARRAY
-    1
-    #else
-    0
-    #endif
-    ,
-    fields_connected
 };
 
 UMLRTObject_field UMLRTTCPProtocol::fields_disconnected[] =

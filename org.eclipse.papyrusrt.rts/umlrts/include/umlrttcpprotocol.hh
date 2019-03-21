@@ -18,6 +18,14 @@ public:
 		signal_disconnected,
 		signal_error };
 
+    struct params_connected
+    {
+        int sockfd;
+    };
+
+    static UMLRTObject_field fields_connected[];
+    static UMLRTObject payload_connected;
+
     struct params_received
     {
         char * payload;
@@ -35,9 +43,6 @@ public:
     static UMLRTObject_field fields_error[];
     static UMLRTObject payload_error;
 
-    static UMLRTObject_field fields_connected[];
-    static UMLRTObject payload_connected;
-
     static UMLRTObject_field fields_disconnected[];
     static UMLRTObject payload_disconnected;
 
@@ -45,7 +50,10 @@ public:
     class OutSignals {
     public:
         
-        const void connect( const char * host, int port ) const;
+    		const void connect( const char * host, int port ) const;
+    		const void listen( int port ) const;
+    		const void accept( ) const;
+    		const void attach( int sockfd ) const;
         const void disconnect( ) const;
         const void send( char * payload, int length ) const;
         const void send( const char * msg ) const;
@@ -60,24 +68,40 @@ class UMLRTTCPProtocol_baserole : protected UMLRTProtocol, private UMLRTTCPProto
 public:
     UMLRTTCPProtocol_baserole( const UMLRTCommsPort *& srcPort ) : UMLRTProtocol( srcPort ) { }
 
-    const void connect( const char * host, int port ) const
+    const bool connect( const char * host, int port ) const
     {
-    	UMLRTTCPService::connekt(srcPort, host, port);
+    		return UMLRTTCPService::connekt(srcPort, host, port);
     }
 
-    const void disconnect( ) const
+    const bool listen( int port ) const
     {
-    	UMLRTTCPService::disconnect(srcPort);
+    		return UMLRTTCPService::listn(srcPort, port);
     }
 
-    const void send( char * payload, int length ) const
+    const bool accept( ) const
     {
-    	UMLRTTCPService::send(srcPort, payload, length);
+    		return UMLRTTCPService::akcept(srcPort);
     }
 
-    const void send( const char * msg) const
+
+    const bool attach( int sockfd ) const
     {
-    	UMLRTTCPService::send(srcPort, msg);
+    		return UMLRTTCPService::attach(srcPort, sockfd);
+    }
+
+    const bool disconnect( ) const
+    {
+    		return UMLRTTCPService::disconnect(srcPort);
+    }
+
+    const bool send( char * payload, int length ) const
+    {
+    		return UMLRTTCPService::send(srcPort, payload, length);
+    }
+
+    const bool send( const char * msg) const
+    {
+    		return UMLRTTCPService::send(srcPort, msg);
     }
 };
 
